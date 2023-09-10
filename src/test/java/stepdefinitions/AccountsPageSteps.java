@@ -1,4 +1,4 @@
-package parallel;
+package stepdefinitions;
 
 import java.util.List;
 import java.util.Map;
@@ -19,7 +19,7 @@ public class AccountsPageSteps {
 	private AccountsPage accountsPage;
 
 	@Given("user has already logged in to application")
-	public void user_has_already_logged_in_to_application(DataTable credTable) {
+	public void user_has_already_logged_in_to_application(DataTable credTable) throws InterruptedException {
 
 		List<Map<String, String>> credList = credTable.asMaps();
 		String userName = credList.get(0).get("username");
@@ -27,6 +27,7 @@ public class AccountsPageSteps {
 
 		DriverFactory.getDriver()
 				.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
+	Thread.sleep(5000);
 		accountsPage = loginPage.doLogin(userName, password);
 
 	}

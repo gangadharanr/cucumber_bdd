@@ -11,8 +11,13 @@ import io.cucumber.testng.CucumberOptions;
 				"timeline:test-output-thread/"
 				}, 
 		monochrome = true,
-		glue = { "parallel" },
-		features = { "src/test/resources/parallel" }
+				glue = {"stepdefinitions"},
+		
+		
+//		features = {"src/test/resources/AppFeatures"},
+		features = {"src/test/resources/parallel/Demo.feature"}		
+//	glue = {"stepdefinitions", "AppHooks"},
+	
 )
 
 public class ParallelRun extends AbstractTestNGCucumberTests {

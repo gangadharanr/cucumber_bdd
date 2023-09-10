@@ -28,6 +28,7 @@ public class DriverFactory {
 		if (browser.equals("chrome")) {
 		//	WebDriverManager.chromedriver().setup();
 		//	WebDriverManager.chromedriver().browserVersion("116.0.5845.180").setup();
+			System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver.exe");
 			tlDriver.set(new ChromeDriver());
 		} else if (browser.equals("firefox")) {
 		//	WebDriverManager.firefoxdriver().setup();
